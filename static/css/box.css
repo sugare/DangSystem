@@ -1,0 +1,116 @@
+/* end .roundedTwo */
+/* .squaredOne */
+.squaredOne {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: 20px auto;
+  background: #fcfff4;
+  background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.squaredOne label {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  cursor: pointer;
+  background: -moz-linear-gradient(top, #222222 0%, #45484d 100%);
+  background: -webkit-linear-gradient(top, #222222 0%, #45484d 100%);
+  background: linear-gradient(to bottom, #222222 0%, #45484d 100%);
+  -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+}
+.squaredOne label:after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: #00bf00;
+  background: -moz-linear-gradient(top, #00bf00 0%, #009400 100%);
+  background: -webkit-linear-gradient(top, #00bf00 0%, #009400 100%);
+  background: linear-gradient(to bottom, #00bf00 0%, #009400 100%);
+  -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+.squaredOne label:hover::after {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+.squaredOne input[type=checkbox] {
+  visibility: hidden;
+}
+.squaredOne input[type=checkbox]:checked + label:after {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #555;
+  background-image: url("http://subtlepatterns.com/patterns/dark_wall.png");
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+body h1, body h2 {
+  color: #eee;
+  font-size: 30px;
+  text-align: center;
+  margin: 20px 0 50px 0;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0px 1px black;
+}
+body .ondisplay {
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding: 20px 0;
+}
+body .ondisplay section {
+  width: 100px;
+  height: 100px;
+  background: #555;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin-top: 5px;
+  border: 1px solid gray;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+body .ondisplay section:before {
+  content: 'click it';
+  color: #bbb;
+  font-size: 12px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0px 1px black;
+}
+body .ondisplay section:after {
+  content: attr(title);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 3px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0px 1px black;
+}

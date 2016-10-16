@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+    
+    <style type="text/css">
+
+    
+    
+    </style>
+</head>
+<body>
+<div>{{ request.user.username }}</div>
+<div>{{ request.user.first_name }}</div>
+<div><a href="/logout/">Logout</a></div>
+
+<div>
+<form action="/submit/" method="post">
+{% csrf_token %}
+<input type='hidden' name="user_id" value="{{ request.user.username }}" />
+<ul>
+<h2>单选题</h2>
+{% for i in squestion_list %}
+	<h4>{{ i }}</h4>
+	<div>
+		{% for choice in i.sin_ans_set.all %}
+			<input type="radio" name="s{{ choice.question_id }}" value="{{ choice.mask }}" />{{ choice }}</br>
+			
+		{% endfor %}
+	</div>
+{% endfor %}
+</ul>
+<br/>
+
+<ul>
+<h2>多选题</h2>
+{% for j in mquestion_list %}
+	<h4>{{ j }}</h4>
+	
+    <div>
+      
+		{% for choice in j.mul_ans_set.all %}
+			<input type="checkbox" name="m{{ choice.question_id }}" value="{{ choice.mask }}" />{{ choice }}</br>
+		
+		{% endfor %}
+	</div>
+{% endfor %}
+</ul>
+<br/>
+
+<ul>
+<h2>判断题</h2>
+{% for k in jquestion_list %}
+	<h4>{{ k }}</h4>
+	<div>
+		<input type="radio" name="j{{ k.id }}" value=1 />正确</br>
+		<input type="radio" name="j{{ k.id }}" value=0 />错误</br>
+	</div>
+{% endfor %}
+</ul>
+<br/>
+<input type="submit" value="交卷" />
+</form>
+</div>
+
+
+
+</body>
+</html>

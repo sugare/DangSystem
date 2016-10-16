@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>党课问卷调查表</title>
+		<link rel="stylesheet" type="text/css" href="../static/survey/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../static/survey/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../static/survey/css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../static/survey/css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="../static/survey/css/cs-skin-boxes.css" />
+		<script src="../static/survey/js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+                <h1>问卷调查表</h1>
+				</div>
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off"  method="POST" action="/surveydata/">{% csrf_token %}
+					<ol class="fs-fields">
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" >{{ q0 }}</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<input id="q0b" name="{{ q0.id }}" type="radio" value="1"/>非常满意<br/>
+								<input id="q0c" name="{{ q0.id }}" type="radio" value="2"/>满意<br/>
+								<input id="q0a" name="{{ q0.id }}" type="radio" value="3"/>比较满意<br/>
+								<input id="q0d" name="{{ q0.id }}" type="radio" value="4"/>一般<br/>
+								<input id="q0e" name="{{ q0.id }}" type="radio" value="5"/>不满意<br/>
+                            </div>
+						</li>
+
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" >{{ q0 }}</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<input id="q1b" name="{{ q1.id }}" type="radio" value="1"/>非常满意<br/>
+								<input id="q1c" name="{{ q1.id }}" type="radio" value="2"/>满意<br/>
+								<input id="q1a" name="{{ q1.id }}" type="radio" value="3"/>比较满意<br/>
+								<input id="q1d" name="{{ q1.id }}" type="radio" value="4"/>一般<br/>
+								<input id="q1e" name="{{ q1.id }}" type="radio" value="5"/>不满意<br/>
+                            </div>
+						</li>
+
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" >{{ q0 }}</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<input id="q2b" name="{{ q2.id }}" type="radio" value="1"/>非常满意<br/>
+								<input id="q2c" name="{{ q2.id }}" type="radio" value="2"/>满意<br/>
+								<input id="q2a" name="{{ q2.id }}" type="radio" value="3"/>比较满意<br/>
+								<input id="q2d" name="{{ q2.id }}" type="radio" value="4"/>一般<br/>
+								<input id="q2e" name="{{ q2.id }}" type="radio" value="5"/>不满意<br/>
+                            </div>
+						</li>
+
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" >{{ q0 }}</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<input id="q3b" name="{{ q3.id }}" type="radio" value="1"/>非常满意<br/>
+								<input id="q3c" name="{{ q3.id }}" type="radio" value="2"/>满意<br/>
+								<input id="q3a" name="{{ q3.id }}" type="radio" value="3"/>比较满意<br/>
+								<input id="q3d" name="{{ q3.id }}" type="radio" value="4"/>一般<br/>
+								<input id="q3e" name="{{ q3.id }}" type="radio" value="5"/>不满意<br/>
+                            </div>
+						</li>
+
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" >{{ q0 }}</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<input id="q4b" name="{{ q4.id }}" type="radio" value="1"/>非常满意<br/>
+								<input id="q4c" name="{{ q4.id }}" type="radio" value="2"/>满意<br/>
+								<input id="q4a" name="{{ q4.id }}" type="radio" value="3"/>比较满意<br/>
+								<input id="q4d" name="{{ q4.id }}" type="radio" value="4"/>一般<br/>
+								<input id="q4e" name="{{ q4.id }}" type="radio" value="5"/>不满意<br/>
+                            </div>
+						</li>
+					</ol>
+                    <input class="fs-submit" type="submit" value="提交问卷" />
+				</form>
+			</div>
+
+		</div><!-- /container -->
+		<script src="/static/survey/js/classie.js"></script>
+		<script src="/static/survey/js/selectFx.js"></script>
+		<script src="/static/survey/js/fullscreenForm.js"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' );
+					}
+				} );
+			})();
+		</script>
+	</body>
+</html>

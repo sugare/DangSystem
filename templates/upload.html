@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form enctype="multipart/form-data" method="POST" action="/uploadfile/">{% csrf_token %}
+    <input type="file" name="myfile" />学生名单
+    <br/>
+    <input type="submit" value="upload" />
+
+</form>
+
+</form>
+</body>
+</html>

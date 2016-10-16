@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+<body><canvas id="viewStyle"></canvas>
+</body>
+</html>
+
+<script>
+
+var winObject = window.screen;
+
+var width = viewStyle.width = winObject .width;
+
+var height = viewStyle.height = winObject .height;
+
+var letters = Array(256).join(1).split('');
+
+var draw = function () {
+
+    viewStyle.getContext('2d').fillStyle = 'rgba(0,0,0,.05)';
+
+    viewStyle.getContext('2d').fillRect(0, 0, width, height);
+
+    viewStyle.getContext('2d').fillStyle = '#0F0';
+
+    letters.map(function (y_pos, index) {
+
+        text = String.fromCharCode(/*3e4*/ 65 + Math.random() * 33);
+
+        x_pos = index * 10;
+
+        viewStyle.getContext('2d').fillText(text, x_pos, y_pos);
+
+        letters[index] = (y_pos > 758 + Math.random() * 1e4) ? 0 : y_pos + 10;
+
+    });
+
+};
+
+setInterval(draw, 33);
+
+</script>

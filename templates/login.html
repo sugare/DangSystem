@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css"/>
+</head> 
+<body>
+    <div id="login">
+        <h1>Login</h1>
+        <form method="POST" action="/accounts/login/">{% csrf_token %}
+            <input type="text" required="required" placeholder="用户名" name="username">
+            <input type="password" required="required" placeholder="密码" name="password">
+            <button class="but" type="submit">登录</button>
+
+			<span style="color: red;">{{ login_err }}</span>
+
+        </form>
+    </div>
+</body>
+</html>
